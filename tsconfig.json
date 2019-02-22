@@ -1,0 +1,28 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "sourceMap": false,
+        "noImplicitAny": false,
+        "module": "commonjs",
+        "target": "es6",
+        "declaration": true,
+        "moduleResolution": "node",
+        "outDir": "./dist",
+        "baseUrl": "./src",
+        "pretty": true,
+        "experimentalDecorators": true,
+        "lib": ["es2015"],
+        "watch": true
+    },
+    "files": [
+        "./node_modules/@types/mocha/index.d.ts",
+        "./node_modules/@types/node/index.d.ts"
+    ],
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/test/**"
+    ]
+}

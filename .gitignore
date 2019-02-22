@@ -1,0 +1,14 @@
+/node_modules/
+node_modules
+node_modules/
+npm-debug.log
+.vscode
+.env
+env.local.json
+configvar.json
+*.DS_Store
+/coverage/
+.nyc_output
+process.txt
+isolate-*
+/dist*

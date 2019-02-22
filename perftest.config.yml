@@ -1,0 +1,16 @@
+config:
+  # Path to the scenarios directory
+  base: "./scenarios"
+  # Transports are used to send reports off to various destinations
+  transports: [ file ]
+  # Formatters are used to format the result of the tests.
+  formatters:
+    - name: JSONFormatter
+    - name: CSVFormatter
+scenarios:
+  - name: "Scenario one"
+    base: /one
+    # file: "one.scenario.js"
+  - name: "Scenario two"
+    base: /two
+    # file: "two.scenario.js"

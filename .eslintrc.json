@@ -1,0 +1,23 @@
+{
+    "extends": "tranzact",
+    "env": {
+        "mocha": true,
+        "node": true,
+        "es6": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "modules": true
+        }
+    },
+    "rules": {
+      "global-require": ["warn"],
+      "no-param-reassign": "off",
+      "no-prototype-builtins": "off",
+      "guard-for-in": "off",
+      "no-restricted-syntax": "off",
+      "no-shadow": "off"
+    }
+  }

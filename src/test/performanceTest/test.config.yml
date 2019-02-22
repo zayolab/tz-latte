@@ -1,0 +1,7 @@
+config:
+  # Payload defines the file where the input data is located
+  payload: ""
+scenarios:
+  - scenario:
+    name: "Load, a single scenario"
+    file: "one.scenario.ts"
