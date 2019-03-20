@@ -1,1 +1,1 @@
-export * from './lib/performanceTestRunner';
+export * from './lib/scenarioRunner';

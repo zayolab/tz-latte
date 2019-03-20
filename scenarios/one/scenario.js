@@ -1,6 +1,8 @@
-module.exports = async function scenario({ numObjects }) {
+module.exports = async function scenario({ val1, val2, numObjects }) {
     return new Promise(async (resolve, reject) => {
         console.log(`Scenario One: ${numObjects}`);
+        console.log(`Val1: ${val1}`);
+        console.log(`Val2: ${val2}`);
         let stats = {
             'Number of Objects': numObjects,
             'Number of Buckets': 1,

@@ -14,7 +14,7 @@ export class ScenarioRunner implements TestRunner {
     private formatters: Array<Formatter>;
     private scenario: Scenario;
     private base: String;
-    private payloads: any[];
+    private payloads: any;
     private results: any[];
     // private subprocess: ChildProcess;
 
@@ -60,7 +60,7 @@ export class ScenarioRunner implements TestRunner {
     }
 
     /**
-     * 
+     * This method generates the reports based on the test results.
      */
     async generateReport() {
         // Go through each transport
@@ -86,17 +86,12 @@ export class ScenarioRunner implements TestRunner {
         return new Promise(async(resolve, reject) => {
             try {
                 console.log('Tests running...');
+                // console.log(this.payloads.common);
                 // Grab the payload for every phase
-                for (let phase in this.payloads) {
-                    console.log(`\nRunning phase: ${phase} --`);
-                    this.results.push(await this.scenario.callback(this.payloads[phase]));
-                    // this.results.push(await pool.exec(this.scenario.callback, [this.payloads[phase]]));
-                    // let result;
-                    // throng(async (id) => {
-                    //     result = await this.scenario.callback(this.payloads[phase]);
-                    //     console.log(result);
-                    // });
-
+                for (let phase in this.payloads.phases) {
+                    console.log(`\nRunning phase: ${ parseInt(phase, 10) + 1 } --`);
+                    let params = Object.assign(this.payloads.common, this.payloads.phases[phase])
+                    this.results.push(await this.scenario.callback(params));
                 }
                 resolve(true);
             } catch (error) {

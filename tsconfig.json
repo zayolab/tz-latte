@@ -12,7 +12,8 @@
         "pretty": true,
         "experimentalDecorators": true,
         "lib": ["es2015"],
-        "watch": true
+        "watch": true,
+        "skipLibCheck": true
     },
     "files": [
         "./node_modules/@types/mocha/index.d.ts",

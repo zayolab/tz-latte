@@ -1,6 +1,6 @@
 #!/usr/bin/env node --expose-gc --max-old-space-size=8192
 
-const { PerformanceTestRunner } = require('../dist/lib/performanceTestRunner.js');
+// const { PerformanceTestRunner } = require('../dist/lib/performanceTestRunner.js');
 const { ScenarioRunner } = require('../dist/lib/scenarioRunner.js');
 const { safeLoad } = require('js-yaml');
 const { readFileSync } = require('fs');
@@ -25,7 +25,7 @@ const PROJECT_BASE = path.resolve('.');
 // console.log(PROJECT_BASE);
 
 // Instantiate a test runner
-let myRunner = new PerformanceTestRunner();
+// let myRunner = new PerformanceTestRunner();
 
 /* MIDDLEWARES */
 /**
@@ -120,7 +120,7 @@ function loadFormatters(argv) {
 
 /**
  * This method runs the test runner.
- * @param {*} argv 
+ * @param {*} argv
  */
 async function run(argv) {
     let name;

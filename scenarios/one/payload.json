@@ -1,8 +1,14 @@
-[
-    { "numObjects": 1000 },
-    { "numObjects": 5000 },
-    { "numObjects": 25000 },
-    { "numObjects": 100000 },
-    { "numObjects": 250000 },
-    { "numObjects": 350000 }
-]
+{
+    "common": {
+        "val1": 1,
+        "val2": 20
+    },
+    "phases": [
+        { "numObjects": 1000 },
+        { "numObjects": 5000 },
+        { "numObjects": 25000 },
+        { "numObjects": 100000 },
+        { "numObjects": 250000 },
+        { "numObjects": 350000 }
+    ]
+}
