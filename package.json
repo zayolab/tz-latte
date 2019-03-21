@@ -17,8 +17,10 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@types/node": "^10.12.24",
+    "@types/request": "^2.48.1",
+    "@types/request-promise-native": "^1.0.15",
+    "lodash": "^4.17.11",
     "throng": "^4.0.0",
-    "tz-logger": "^0.3.9",
     "yargs": "^13.0.0-candidate.0"
   },
   "devDependencies": {
@@ -29,7 +31,6 @@
     "chai-as-promised": "^7.1.1",
     "documentation": "^9.0.0",
     "eslint": "^5.10.0",
-    "eslint-config-tranzact": "^1.0.6",
     "eslint-plugin-mocha": "^5.2.0",
     "js-yaml": "^3.12.1",
     "json2csv": "^4.3.3",

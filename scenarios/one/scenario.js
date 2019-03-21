@@ -11,6 +11,6 @@ module.exports = async function scenario({ val1, val2, numObjects }) {
             'Time to Purge': 1,
             'Memory Used': 1
         };
-        resolve(stats);
+        tyresolve(stats);
     });
 };
