@@ -82,16 +82,35 @@ export class ScenarioRunner implements TestRunner {
         });
     }
 
+    async phaseRunner(params) {
+        // console.log('-- phaseRunner ---------');
+        let val = await this.scenario.callback(params);
+        // console.log(val);
+        return val;
+    }
+
+    *phaseGenerator(payloads){
+
+        for (let i = 0; i < payloads.phases.length; i += 1) {
+            console.log(`\nRunning phase: ${ i + 1 } --`);
+            let params = Object.assign(payloads.common, payloads.phases[i]);
+            // console.log(params);
+            yield this.phaseRunner(params);
+        }
+
+    }
+
     async run() {
-        return new Promise(async(resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
             try {
                 console.log('Tests running...');
-                // console.log(this.payloads.common);
                 // Grab the payload for every phase
-                for (let phase in this.payloads.phases) {
-                    console.log(`\nRunning phase: ${ parseInt(phase, 10) + 1 } --`);
-                    let params = Object.assign(this.payloads.common, this.payloads.phases[phase])
-                    this.results.push(await this.scenario.callback(params));
+                let pg = this.phaseGenerator(this.payloads);
+                let result = pg.next();
+                while(!result.done) {
+                    // console.log(await result.value);
+                    this.results.push(await result.value);
+                    result = pg.next();
                 }
                 resolve(true);
             } catch (error) {
